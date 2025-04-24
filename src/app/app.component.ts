@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ControlFlowComponent } from './components/control-flow/control-flow.component';
-import { InterpolacaoComponent } from './components/interpolacao/interpolacao.component';
-import { PropertieBindingComponent } from './components/propertie-binding/propertie-binding.component';
 import { DiretivaComponent } from './components/diretiva/diretiva.component';
+import { PropertieBindingComponent } from './components/propertie-binding/propertie-binding.component';
+import { Carros } from './interfaces/Carros';
+import { Cliente } from './interfaces/Cliente';
+import { ClienteComponent } from './components/cliente/cliente.component';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,18 @@ import { DiretivaComponent } from './components/diretiva/diretiva.component';
     //InterpolacaoComponent,
     //ControlFlowComponent,
     PropertieBindingComponent,
-    DiretivaComponent],
+    DiretivaComponent,
+    ClienteComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'app-control-flow';
+
+  //usando a interface pq precisa usar todos
+  carros: Carros[] = [
+    { id: 1, nome: "Corsa", marca: "GM", ano: 1996, cor: "azul" },
+    { id: 1, nome: "Celta", marca: "GM", ano: 2000, cor: "preto" },
+    { id: 1, nome: "Onix", marca: "GM", ano: 2008, cor: "cinza" }
+  ]
 }
