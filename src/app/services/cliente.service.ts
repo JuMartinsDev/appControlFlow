@@ -10,9 +10,9 @@ export class ClienteService {
 
   //Criar uma lista fake
   clientes: Cliente[]=[
-    {id:"ehbifegierge", nome: "Thiago", telefone:"12"},
-    {id:"chswicfbwief", nome: "Maria", telefone:"9483749877"},
-    {id:"ehbifegierge", nome: "Thiago", telefone:"9483747577"},
+    {id:"ehbifegierge", nome: "Thiago", telefone:"1195076-8876"},
+    {id:"chswicfbwief", nome: "Maria", telefone:"1194483-7498"},
+    {id:"ehbifegierge", nome: "Luiza", telefone:"1194837-4757"},
   ]
 
   constructor() { }

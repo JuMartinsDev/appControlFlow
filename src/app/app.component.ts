@@ -5,6 +5,8 @@ import { PropertieBindingComponent } from './components/propertie-binding/proper
 import { Carros } from './interfaces/Carros';
 import { Cliente } from './interfaces/Cliente';
 import { ClienteComponent } from './components/cliente/cliente.component';
+import { HomeComponent } from "./home/home.component";
+import { NavComponent } from './components/nav/nav.component';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +15,12 @@ import { ClienteComponent } from './components/cliente/cliente.component';
     RouterOutlet,
     //InterpolacaoComponent,
     //ControlFlowComponent,
-    PropertieBindingComponent,
-    DiretivaComponent,
-    ClienteComponent],
+    //PropertieBindingComponent,
+    //DiretivaComponent,
+    //ClienteComponent,
+    //HomeComponent,
+    NavComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
