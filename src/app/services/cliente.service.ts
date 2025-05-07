@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 //importamos pois vamos usar
 import { Cliente } from '../interfaces/Cliente';
+import { HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -8,19 +10,23 @@ import { Cliente } from '../interfaces/Cliente';
 })
 export class ClienteService {
 
-  //Criar uma lista fake
-  clientes: Cliente[]=[
-    {id:"ehbifegierge", nome: "Thiago", telefone:"1195076-8876"},
-    {id:"chswicfbwief", nome: "Maria", telefone:"1194483-7498"},
-    {id:"ehbifegierge", nome: "Luiza", telefone:"1194837-4757"},
-  ]
+  private apiUrl = 'http://localhost:3000/clientes'; //URL da API
 
-  constructor() { }
+  clientes: Cliente[]=[]
+
+  //injeção de dependência do http
+  constructor(private http:HttpClient) {
+
+  }
+
+  list() : Observable<Cliente[]>{
+    return this.http.get<Cliente[]>(this.apiUrl) as Observable<Cliente[]>;
+  }
 
   //retornar a lista de clientes
-  list(): Cliente[]{
-    return this.clientes;
-  }
+  //list(): Cliente[]{
+   // return this.clientes;
+  //}
 
   //método para remover um cliente
   remove(id:string){

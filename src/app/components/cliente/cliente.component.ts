@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 export class ClienteComponent {
 
   clienteForm : FormGroup = new FormGroup({});
-  cliente: Cliente[] = [];
+  clientes: Cliente[] = [];
   clienteIdEdicao: string | null = null;
 
   //injeção --- nome escolhido --- objeto injetado
@@ -25,9 +25,8 @@ export class ClienteComponent {
     })
   }
 
-  //serve para ir na serice e consumindo as listas dela e atribuimos a uma variavel dessa classe
   list(): void{
-    this.cliente = this.clienteService.list()
+    this.clienteService.list().subscribe((resposta) => (this.clientes = resposta))
   }
 
   //métoo executado ao inicializar a página
@@ -85,19 +84,19 @@ export class ClienteComponent {
     // parametro para poder buscar
     //buscando todos os clientes e filtrando pelo id enviado como parametro
     //console.log(this.clienteService.list())
-    const cliente = this.clienteService.list().find(c => c.id == id)
+    // const cliente = this.clienteService.list().find(c => c.id == id)
 
-    if(cliente){
-      this.clienteIdEdicao= cliente.id;
+    // if(cliente){
+    //   this.clienteIdEdicao= cliente.id;
 
-      //atribuir os valores ao formulário
-      this.clienteForm.patchValue(
-        {
-          nome: cliente.nome,
-          telefone: cliente. telefone
-        }
-      )
-    }
+    //   //atribuir os valores ao formulário
+    //   this.clienteForm.patchValue(
+    //     {
+    //       nome: cliente.nome,
+    //       telefone: cliente. telefone
+    //     }
+    //   )
+    // }
   }
 
   remover(id:string):void{
