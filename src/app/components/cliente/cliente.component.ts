@@ -68,7 +68,8 @@ export class ClienteComponent {
           telefone: formData.telefone
         }
         //console.log(clienteAdd)
-        this.clienteService.add(clienteAdd) //chamando a service para inserir
+        //para o post, adicione o subscribe(); e adicione o this.list(); para recarregar
+        this.clienteService.add(clienteAdd).subscribe(); //chamando a service para inserir
         alert('Inserido com sucesso') //enviando feedback para usuário
         //this.list() chamar service e recarrega com o item inserido
       }
@@ -78,6 +79,7 @@ export class ClienteComponent {
       alert('Por favor, preencher os campos obrigatórios!')
     }
     this.clienteForm.reset() //limpar o form após preenchimento
+    this.list();
   }
 
   editar(id: string): void {
