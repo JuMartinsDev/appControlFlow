@@ -7,19 +7,16 @@ import { Cliente } from './interfaces/Cliente';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { HomeComponent } from "./home/home.component";
 import { NavComponent } from './components/nav/nav.component';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    //InterpolacaoComponent,
-    //ControlFlowComponent,
-    //PropertieBindingComponent,
-    //DiretivaComponent,
-    //ClienteComponent,
-    //HomeComponent,
-    NavComponent
+    NavComponent,
+    CategoriasComponent
 ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
